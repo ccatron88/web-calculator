@@ -14,17 +14,17 @@ function multiply(fNumber, sNumber) {
 }
 
 function divide(fNumber, sNumber) {
-    return fNumber / sNumber;
+    return (fNumber / sNumber);
 }
 
 const operate = (num1, num2, operator) => {
     if (operator === '+') {
-        add(num1, num2);
+        return add(num1, num2);
     } else if (operator === '-') {
-        subtract(num1, num2);
+        return subtract(num1, num2);
     } else if (operator === '*') {
-        multiply(num1, num2);
+        return multiply(num1, num2);
     } else if (operator === '/') {
-        divide(num1, num2);
+        return divide(num1, num2);
     }
 }
