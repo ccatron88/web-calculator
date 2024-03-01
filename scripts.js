@@ -2,6 +2,8 @@ let num1, num2;
 let operator = ''
 let numDivWidth = 300;
 let numDivHeight = 500;
+const numKeyWidth = numDivWidth * .13;
+const numKeyHeight = numDivHeight * .13;
 
 function add(fNumber, sNumber) {
     return fNumber + sNumber;
@@ -33,15 +35,25 @@ const operate = (num1, num2, operator) => {
 
 const loadNumerals = () => {
     const numeralDiv = document.querySelector('#numerals')
+    const actionsEl = `
+        <div id="actions-container">
+            <div id="clr"><button class="action-key" style="height: ${numKeyHeight}px; width: ${numKeyWidth}px;">C</button></div>
+            <div id="equal"><button class="action-key" style="height: ${numKeyHeight}px; width: ${numKeyWidth}px;">=</button></div>
+        </div>
+    `
     
-    for (let i = 0; i < 10; i++) {
+    for (let i = 9; i >= 0; i--) {
         const numKey = document.createElement('button');
-        numKey.classList.add('number-key')
-        numKey.style.width = (numDivWidth / 10);
-        numKey.style.height = (numDivHeight / 10);
+        numKey.classList.add('calculator-key')
+        numKey.style.width = `${numKeyWidth}px`;
+        numKey.style.height = `${numKeyHeight}px`;
         numKey.innerText = i;
         numeralDiv.appendChild(numKey);
     }
+    numeralDiv.insertAdjacentHTML('beforeend', actionsEl).classList.add('calculator-key');
+
+
+
 }
 
 document.addEventListener('DOMContentLoaded', loadNumerals())
