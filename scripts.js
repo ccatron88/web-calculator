@@ -50,7 +50,7 @@ const loadNumerals = () => {
         numKey.innerText = i;
         numeralDiv.appendChild(numKey);
     }
-    numeralDiv.insertAdjacentHTML('beforeend', actionsEl).classList.add('calculator-key');
+    numeralDiv.insertAdjacentHTML('beforeend', actionsEl);
 
 
 
